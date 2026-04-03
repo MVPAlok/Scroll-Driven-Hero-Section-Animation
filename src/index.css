@@ -1337,46 +1337,129 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE — TABLET & SMALL DESKTOP
+   (max-width: 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+  .hero__content {
+    max-width: 800px;
+  }
+
+  .section__inner--wide {
+    max-width: 900px;
+  }
+
+  .perf-split {
+    gap: 2.5rem;
+  }
+
+  .features-grid {
+    gap: 1.2rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE & TABLET
+   (max-width: 768px)
    ============================================ */
 @media (max-width: 768px) {
+
+  /* ── Hero ── */
   .hero__headline {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    letter-spacing: 0.18em;
+  }
+
+  .hero__subline {
+    font-size: clamp(0.7rem, 3vw, 0.95rem);
     letter-spacing: 0.2em;
   }
 
-  .stats {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .stats__card {
-    min-width: 280px;
-  }
-
-  .car-track__vehicle img {
-    height: 70px;
-  }
-
-  .car-track {
-    height: 120px;
+  .hero__content {
+    padding: 0 1.2rem;
   }
 
   .hero__scroll-hint {
     bottom: 140px;
+    display: none;
   }
 
+  /* ── Stats ── */
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .stats__card {
+    min-width: 240px;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  /* ── Car Track ── */
+  .car-track {
+    height: 110px;
+  }
+
+  .car-track__vehicle img {
+    height: 65px;
+  }
+
+  .car-track__shadow {
+    width: 100px;
+    height: 8px;
+  }
+
+  /* ── Sections ── */
+  .section {
+    padding: 4rem 1.2rem;
+    min-height: auto;
+  }
+
+  .section__inner,
+  .section__inner--wide {
+    max-width: 100%;
+  }
+
+  .section__title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    letter-spacing: 0.04em;
+  }
+
+  .section__subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  /* ── Feature Cards ── */
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .feature-card:nth-child(2),
-  .feature-card:nth-child(4) {
-    transform: translateY(0);
+  .feature-card {
+    padding: 1.6rem 1.4rem;
+    border-radius: 16px;
   }
 
+  .feature-card__icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ── Performance Section ── */
   .perf-split {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .perf-split__visual,
+  .perf-split__content {
+    width: 100%;
+    flex: none;
   }
 
   .perf-split__content {
@@ -1387,12 +1470,213 @@ body {
     text-align: center;
   }
 
+  /* Terminal */
+  .perf-terminal__body {
+    font-size: 0.68rem;
+    padding: 1rem 1rem;
+    overflow-x: auto;
+  }
+
+  .perf-terminal__line {
+    font-size: 0.68rem;
+  }
+
+  .perf-terminal__line--indent { padding-left: 1rem; }
+  .perf-terminal__line--indent2 { padding-left: 1.8rem; }
+
+  /* Metrics */
+  .perf-metric__value {
+    font-size: 1.1rem;
+  }
+
+  .perf-metric {
+    padding: 0.7rem 0.6rem;
+  }
+
   .perf-features__item {
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  /* ── CTA Section ── */
+  .cta-content__title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .cta-content__desc {
+    font-size: 0.9rem;
   }
 
   .cta-content__buttons {
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  /* ── CTA Orb ── */
+  .cta__gradient-orb {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — SMALL MOBILE
+   (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* ── Hero ── */
+  .hero__headline {
+    font-size: clamp(1.8rem, 12vw, 2.6rem);
+    letter-spacing: 0.12em;
+  }
+
+  .hero__subline {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hero__accent-line {
+    width: 50px;
+    margin: 0 auto 1.5rem;
+  }
+
+  /* ── Stats (Glassmorphism Cards) ── */
+  .stats__card {
+    min-width: 0;
+    width: calc(100% - 2rem);
+    padding: 1.2rem 1rem;
+  }
+
+  .stats__number {
+    font-size: 2rem;
+  }
+
+  /* ── Car Track ── */
+  .car-track {
+    height: 95px;
+  }
+
+  .car-track__vehicle img {
+    height: 54px;
+  }
+
+  /* Hide decorative effects on very small screens */
+  .car-track__glow,
+  .car-track__headlight,
+  .car-track__speed-lines {
+    display: none;
+  }
+
+  /* ── Sections ── */
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .section__badge {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.9rem;
+  }
+
+  .section__title {
+    font-size: clamp(1.4rem, 8vw, 1.9rem);
+  }
+
+  /* ── Feature Cards ── */
+  .feature-card {
+    padding: 1.3rem 1.1rem;
+    border-radius: 14px;
+  }
+
+  .feature-card__title {
+    font-size: 0.95rem;
+  }
+
+  .feature-card__desc {
+    font-size: 0.78rem;
+  }
+
+  /* ── Performance Terminal ── */
+  .perf-terminal__body {
+    font-size: 0.6rem;
+    padding: 0.8rem;
+    overflow-x: scroll;
+  }
+
+  .perf-terminal__header {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .perf-metric__value {
+    font-size: 0.95rem;
+  }
+
+  .perf-metric__label {
+    font-size: 0.55rem;
+  }
+
+  .perf-metric {
+    padding: 0.5rem 0.4rem;
+  }
+
+  /* ── Waveform ── */
+  .perf-wave {
+    height: 32px;
+    padding: 0.6rem 1rem;
+  }
+
+  /* ── Progress Bars ── */
+  .perf-bar__name,
+  .perf-bar__value {
+    font-size: 0.7rem;
+  }
+
+  /* ── CTA ── */
+  .section--cta {
+    padding: 3rem 1rem;
+  }
+
+  .cta-content__title {
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+  }
+
+  .cta-btn {
+    padding: 0.85rem 1.8rem;
+    font-size: 0.78rem;
+    max-width: 240px;
+  }
+
+  /* ── Particles — reduce count blur on mobile ── */
+  .cta__particle:nth-child(n+7) {
+    display: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY — REDUCE MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero__gradient-anim,
+  .hero__particle,
+  .cta__particle,
+  .perf-wave__bar,
+  .perf-terminal__line {
+    animation: none !important;
+    opacity: 1 !important;
   }
 }
